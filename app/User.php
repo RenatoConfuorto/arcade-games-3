@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Faker\Generator as Faker;
 
 class User extends Authenticatable
 {
@@ -36,4 +37,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function generateUserCode(Faker $faker){
+        $regex = '[A-Za-z0-9]{10}';
+        $code = $faker->regexify($regex);
+        $relative_user = User::where('code', '=', $code)->first();
+
+        while ($relative_user) {
+            $code = $faker->regexify($regex);
+            $relative_user = User::where('code', '=', $code)->first();
+        }
+
+        return $code;
+    }
 }
