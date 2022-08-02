@@ -55,4 +55,12 @@ class User extends Authenticatable
     public function watchedUsers(){
         return $this->hasMany('App\WatchedUser');
     }
+
+    public function userDetails(){
+        return $this->hasOne('App\UserDetail');
+    }
+
+    public function scores(){
+        return $this->hasMany('App\Score');
+    }
 }

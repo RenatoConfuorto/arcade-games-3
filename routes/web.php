@@ -2,10 +2,8 @@
 
 use App\GameVersion;
 use App\Score;
-use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use Ramsey\Uuid\Exception\RandomSourceException;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,5 +24,7 @@ Auth::routes();
 
 Route::middleware('auth')->get('/home', 'HomeController@index')->name('home');
 Route::middleware('is_admin')->get('/admin', function(){
-    return view('admin');
+    $score = Score::where('id', 25)->first();
+    $data = $score->gameVersion;
+    dd($data);
 })->name('admin');
