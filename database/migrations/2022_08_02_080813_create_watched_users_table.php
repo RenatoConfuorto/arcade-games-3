@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateWatchedUsersTalbe extends Migration
+class CreateWatchedUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateWatchedUsersTalbe extends Migration
      */
     public function up()
     {
-        Schema::create('watched_users_talbe', function (Blueprint $table) {
+        Schema::create('watched_users', function (Blueprint $table) {
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
                 ->references('id')
