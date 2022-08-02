@@ -69,6 +69,10 @@
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
+                        @if (auth()->user()->is_admin)
+                            <a href="{{ route('admin') }}">Admin</a>
+                        
+                        @endif
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
