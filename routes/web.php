@@ -1,7 +1,11 @@
 <?php
 
+use App\GameVersion;
+use App\Score;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Ramsey\Uuid\Exception\RandomSourceException;
 
 /*
 |--------------------------------------------------------------------------
