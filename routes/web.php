@@ -1,7 +1,5 @@
 <?php
 
-use App\User;
-use App\WatchedUser;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
