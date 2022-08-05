@@ -1,7 +1,4 @@
 <?php
-
-use App\GameVersion;
-use App\Score;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -15,16 +12,18 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+$routes = [
+    [
+        'name' => 'login', //per debug
+        'text' => 'tris',
+    ],
+];
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('start');
+Route::get('/', function() use($routes)  {
+    return view('home', compact('routes'));
+})->name('home');
 
 Auth::routes();
-
-Route::middleware('auth')->get('/home', 'HomeController@index')->name('home');
-Route::middleware('is_admin')->get('/admin', function(){
-    $score = Score::where('id', 25)->first();
-    $data = $score->gameVersion;
-    dd($data);
-})->name('admin');
+// Route::middleware('auth')->get('/home', 'HomeController@index')->name('home');
+// Route::middleware('is_admin')->get('/admin', function(){
+// })->name('admin');
