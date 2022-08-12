@@ -15,7 +15,10 @@ class UserDetailsTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::table('user_details')->truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+        
         //prelevare gli utenti
         $users = User::all();
 

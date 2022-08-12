@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+.flex-inline-cd {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 img {
   max-width: 100%;
 }
@@ -15,6 +21,10 @@ ul {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.d-none {
+  display: none;
 }
 
 @font-face {
@@ -36,6 +46,16 @@ body .container {
   align-items: center;
 }
 
+body .container.versions-list {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 body .container .img-container {
   width: 100%;
   margin-bottom: 50px;
@@ -48,18 +68,65 @@ body .container .img-container img {
   height: auto;
 }
 
-body .container ul li {
+body .container .list-items li {
   margin-bottom: 16px;
+  line-height: 1.4;
   color: #ffffff;
   font-size: 1.4rem;
+  text-align: center;
 }
 
-body .container ul li::first-letter {
+body .container .list-items li::first-letter {
   text-transform: capitalize;
 }
 
-body .container ul li:hover {
+body .container .list-items li:hover {
   color: #f70d68;
+}
+
+body .container .list-items li .info {
+  display: none;
+}
+
+body .container .list-items li .info-btn {
+  margin-left: 15px;
+  padding: 0.3rem 0.4rem;
+  cursor: pointer;
+  font-size: 75%;
+}
+
+body .container .list-items li .info-btn:hover {
+  color: #ffffff;
+}
+
+body .container .list-items li .info .game-info {
+  padding: 2.5rem 0.5rem;
+  position: absolute;
+  z-index: 2;
+  background-color: #f70d68;
+  color: #ffffff;
+  width: 60%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+body .container .list-items li .info .game-info span {
+  position: absolute;
+  right: 0.5rem;
+  top: 10px;
+  padding: 0.2rem;
+  color: white;
+  cursor: pointer;
+}
+
+body .container .list-items li .info .game-info h2 {
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+body .container .list-items li .info .game-info p {
+  font-size: 0.8em;
 }
 
 @media screen and (min-width: 1440px) {
@@ -67,19 +134,31 @@ body .container ul li:hover {
     width: 675px;
   }
 
-  body .container ul li {
+  body .container .list-items li {
     font-size: 1.8rem;
   }
 }
 
 @media screen and (max-width: 425px) {
   body .container {
-    width: 60%;
+    width: 80%;
     margin-top: 1rem;
   }
 
-  body .container ul li {
+  body .container .img-container img {
+    max-width: 80%;
+  }
+
+  body .container .list-items li {
     font-size: 1.2rem;
+  }
+
+  body .container .list-items li .info {
+    display: block;
+  }
+
+  body .container .list-items li .info-btn {
+    display: block;
   }
 }
 

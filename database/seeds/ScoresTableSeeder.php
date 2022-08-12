@@ -15,7 +15,10 @@ class ScoresTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::table('scores')->truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+        
         $users = User::all();
         $game_versions = GameVersion::all();
 

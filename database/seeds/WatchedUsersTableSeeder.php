@@ -14,7 +14,10 @@ class WatchedUsersTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::table('watched_users')->truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+        
         //prendere il totale degli utenti e calcolare quante combianzioni ci sono
         $users = User::all();
         $users_count = $users->count();

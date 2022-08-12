@@ -29,13 +29,11 @@ class CreateScoresTable extends Migration
 
             $table->foreign('game_version_id')
                 ->references('id')
-                ->on('game_versions')
-                ->onDelete('NO ACTION');
+                ->on('game_versions');
 
             $table->foreign('user_id')
                 ->references('id')
-                ->on('users')
-                ->onDelete('NO ACTION');
+                ->on('users');
             
             $table->timestamps();
         });

@@ -16,7 +16,9 @@ class UsersTableSeeder extends Seeder
     public function run(Faker $faker)
     {
         //svuotare la tabella
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::table('users')->truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
         //password uguale per tutti gli utenti per il debug
         $password = 'password';

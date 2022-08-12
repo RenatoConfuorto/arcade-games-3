@@ -1,5 +1,6 @@
 <?php
 
+use App\GameVersion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,4 +17,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::get('/games-info/{key}', function (Request $request) {
+    $key = $request->key;
+    $game_version = GameVersion::where('game_key', $key)->first();
+    return response()->json(
+        [
+            'success' => true,
+            'response' => $game_version
+        ]
+    );
 });
