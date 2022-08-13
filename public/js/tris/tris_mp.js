@@ -1,4 +1,4 @@
-import {getGameInfo, printCells, showAlert} from '/js/common.js';
+import {getGameInfo, printCells, showAlert} from '../common.js';
 import { winningCombinations, checkVictory } from './common.js';
 const game_key = 'tris_mp';
 const grid = document.getElementById('grid');
