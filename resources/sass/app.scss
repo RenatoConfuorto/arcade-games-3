@@ -38,6 +38,7 @@ a{
 
 body{
   background-color: $bg-color;
+  color: $text-color;
   font-family: 'Press Start 2P';
   line-height: 1.4;
 
@@ -141,6 +142,49 @@ body{
       }
     }
   }
+
+  //base giochi
+
+  .board{
+    display: flex;
+
+    .game-area{
+      padding: 12px;
+      position: relative;
+    }
+
+    .game-data{
+      padding: 12px;
+    }
+
+    h2{
+      font-size: $font-size;
+      margin-bottom: 16px;
+    }
+
+    p{
+      font-size: 1em;
+      margin-bottom: 20px;
+    }
+
+    .game-alert{
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .game-alert-message{
+        font-size: 40px;
+        padding: 20px;
+        background-color: $accent-color
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -156,6 +200,21 @@ body{
         }
       }
     }
+
+    .board{
+    
+      .game-data{
+        width: 360px;
+    
+        h2{
+          font-size: 2rem;
+        }
+
+        p{
+          font-size: 1.2em;
+        }
+      }
+  }
   }
 }
 
@@ -188,6 +247,15 @@ body{
         }
       }
     }
+    
+      .board{
+    
+        .game-alert{
+      
+          .game-alert-message{
+            font-size: $font-size;
+          }
+        }
+      }
   }
-
 }

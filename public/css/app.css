@@ -34,6 +34,7 @@ a {
 
 body {
   background-color: #3535ec;
+  color: #ffffff;
   font-family: "Press Start 2P";
   line-height: 1.4;
 }
@@ -131,6 +132,46 @@ body .container .list-items li .info .game-info p {
   font-size: 0.8em;
 }
 
+body .board {
+  display: flex;
+}
+
+body .board .game-area {
+  padding: 12px;
+  position: relative;
+}
+
+body .board .game-data {
+  padding: 12px;
+}
+
+body .board h2 {
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+}
+
+body .board p {
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+body .board .game-alert {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body .board .game-alert .game-alert-message {
+  font-size: 40px;
+  padding: 20px;
+  background-color: #f70d68;
+}
+
 @media screen and (min-width: 1440px) {
   body .container {
     width: 675px;
@@ -138,6 +179,18 @@ body .container .list-items li .info .game-info p {
 
   body .container .list-items li {
     font-size: 1.8rem;
+  }
+
+  body .board .game-data {
+    width: 360px;
+  }
+
+  body .board .game-data h2 {
+    font-size: 2rem;
+  }
+
+  body .board .game-data p {
+    font-size: 1.2em;
   }
 }
 
@@ -161,6 +214,10 @@ body .container .list-items li .info .game-info p {
 
   body .container .list-items li .info-btn {
     display: block;
+  }
+
+  body .board .game-alert .game-alert-message {
+    font-size: 1.4rem;
   }
 }
 

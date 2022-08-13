@@ -1,0 +1,64 @@
+@import '_variables.scss';
+
+:root{
+  --cell-size: 120px;
+  --gutter: 20px;
+}
+
+#grid{
+  width: calc((var(--cell-size) + var(--gutter)) * 3);
+  height: calc((var(--cell-size) + var(--gutter)) * 3);
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: space-between;
+
+  .cell{
+    width: var(--cell-size);
+    height: var(--cell-size);
+  
+    border: 4px solid white;
+    cursor: pointer;
+    font-size: 60px;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  h3{
+    margin-bottom: 12px;
+  }
+}
+
+.game-data{
+  width: 240px;
+}
+
+@media screen and (min-width: 1440px){
+  :root{
+    --cell-size: 180px;
+    --gutter: 30px;
+  }
+
+  #grid{
+    
+      .cell{
+        border-width: 6px;
+        font-size: 90px;
+      }
+
+  }
+}
+
+@media screen and (max-width: 425px){
+  :root{
+    --cell-size: 28vw;
+    --gutter: 2vw;
+  }
+
+  .game-data{
+    display: none;
+  }
+}

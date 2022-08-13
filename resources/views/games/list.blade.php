@@ -24,7 +24,7 @@
 @push('script')
 <script type="module">
   
-import { getGameInfoMobile, changeInfoBannerVisibility } from '/js/common.js';
+import { getGameInfo, changeInfoBannerVisibility } from '/js/common.js';
 
 const btns = document.querySelectorAll('span.info-btn');
 
@@ -32,7 +32,7 @@ btns.forEach( btn => {
   // console.log(btn);
   const key = btn.dataset.key;
   
-  getGameInfoMobile(key);
+  getGameInfo(key, true);
   btn.addEventListener('click', changeInfoBannerVisibility);
 
 
