@@ -21,7 +21,8 @@ class GamesTableSeeder extends Seeder
 
         foreach($data as $game){
             $new_game = new Game();
-            $new_game->name = $game;
+            $new_game->name = $game['name'];
+            $new_game->prefix = $game['prefix'];
 
             $new_game->save();
         }

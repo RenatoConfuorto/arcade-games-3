@@ -74,6 +74,7 @@ body .container .list-items li {
   color: #ffffff;
   font-size: 1.4rem;
   text-align: center;
+  text-transform: capitalize;
 }
 
 body .container .list-items li::first-letter {
@@ -123,6 +124,7 @@ body .container .list-items li .info .game-info span {
 body .container .list-items li .info .game-info h2 {
   font-size: 1em;
   margin-bottom: 10px;
+  border-bottom: 1px solid white;
 }
 
 body .container .list-items li .info .game-info p {

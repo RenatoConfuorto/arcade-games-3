@@ -2,6 +2,12 @@
 
 return $data = 
 [
-  'Tris',
-  'Connect Four'
+  [
+    'name' => 'tris',
+    'prefix' => 'tris',
+  ],
+  [
+    'name' => 'connect four',
+    'prefix' => 'connect_four',
+  ],
 ];

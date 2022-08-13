@@ -16,6 +16,7 @@ class CreateGameVersionsTable extends Migration
         Schema::create('game_versions', function (Blueprint $table) {
             $table->id();
             $table->string('name', 75);
+            $table->string('prefix', 75);
             $table->string('text', 100);
             $table->unsignedBigInteger('game_id');
             $table->text('description');

@@ -12,7 +12,7 @@
         </div>
         <ul class="list-items">
             @foreach ($games as $game)
-                <li><a href="{{ route('games.versions', ['name' => $game['name']]) }}">{{ $game['name'] }}</a></li>
+                <li><a href="{{ route('games.versions', ['prefix' => $game['prefix']]) }}">{{ $game['name'] }}</a></li>
             @endforeach
         </ul>
     </div>

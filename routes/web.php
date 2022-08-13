@@ -25,13 +25,17 @@ Route::get('/', function() use($routes)  {
 
 Auth::routes();
 
-Route::get('versions/{name}', function(Request $request){
+Route::get('games/{prefix}', function(Request $request){
     // $id = $request->id;
-    $name = $request->name;
-    $game = Game::where('name', $name)->first();
+    $prefix = $request->prefix;
+    $game = Game::where('prefix', $prefix)->first();
     $game_versions = $game->versions;
+    $data = [
+        'game_versions'=> $game_versions,
+        'prefix'=> $game['prefix'],
+    ];
     // dd($game->versions);
-    return view('games.list', compact('game_versions'));
+    return view('games.list', $data);
 })->name('games.versions');
 
 Route::namespace('Games')
@@ -43,7 +47,6 @@ Route::namespace('Games')
         Route::prefix('tris')
             ->name('tris.')
             ->group( function(){
-                Route::get('/', 'GamesController@tris')->name('list');
                 Route::get('tris_sp', 'GamesController@tris_sp')->name('tris_sp');
                 Route::get('tris_mp', 'GamesController@tris_mp')->name('tris_mp');
             });

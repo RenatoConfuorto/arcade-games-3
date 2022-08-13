@@ -80,6 +80,7 @@ body{
         color: $text-color;
         font-size: $font-size;
         text-align: center;
+        text-transform: capitalize;
 
         &::first-letter{
           text-transform: capitalize;
@@ -126,7 +127,8 @@ body{
 
             h2{
               font-size: 1em;
-              margin-bottom: 10px
+              margin-bottom: 10px;
+              border-bottom: 1px solid white;
             }
 
             p{

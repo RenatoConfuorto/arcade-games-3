@@ -9,7 +9,7 @@
     <ul class="list-items">
       @foreach ($game_versions as $version)
         <li class="flex-inline-cd">
-          <a href="#">{{ $version['text'] }}</a>
+          <a href="{{ route('games.' . $prefix . '.' . $version['game_key']) }}">{{ $version['text'] }}</a>
           <div class="info">
             <span class="info-btn" data-key="{{ $version['game_key'] }}">?</span>
             <div class="game-info {{ $version['game_key'] }} d-none" data-key="{{ $version['game_key'] }}"">
